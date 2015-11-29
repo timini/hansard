@@ -1,0 +1,6 @@
+data/large_files filter=lfs diff=lfs merge=lfs -crlf
+data/large_files/comments.json filter=lfs diff=lfs merge=lfs -crlf
+data/large_files/corpus.mm filter=lfs diff=lfs merge=lfs -crlf
+data/large_files/corpus.mm.index filter=lfs diff=lfs merge=lfs -crlf
+data/large_files/tfidf_corpus.mm filter=lfs diff=lfs merge=lfs -crlf
+data/large_files/tfidf_corpus.mm.index filter=lfs diff=lfs merge=lfs -crlf
