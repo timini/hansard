@@ -18,3 +18,7 @@ Data analysis is prototyped using ipython notebooks. You can view them using the
 1. [Data Wrangling](http://nbviewer.ipython.org/github/timini/hansard/blob/master/01%20API%20Wrangling.ipynb) Obtaining data from the API, cleaning it and converting it to a useful datastructure.
 2. [Generating model representations of the data](http://nbviewer.ipython.org/github/timini/hansard/blob/master/02%20Data%20cleaning%2C%20vector%20representations.ipynb) The raw text is cleaned of punctuation and tokenised. Bag of Words and IF/IDF models are created.
 3. [PCA and clustering of Speakers](http://nbviewer.ipython.org/github/timini/hansard/blob/master/03%20PCA%20.ipynb) - do labeled groups cluster using PCA? i.e do speakers from the house of commons / lords cluster together? Do speakers from the different poitical parties cluster together?
+
+#### Related Projects
+
+ - Jun Hao has a [notebook covering topic modelling](http://hojunhao.github.io/sgparliament/LDA.html) of the Singapore Parliamentary Debate Records. 
