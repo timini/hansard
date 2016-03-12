@@ -17,8 +17,8 @@ else:
     corpus = corpora.MmCorpus(CORPUS_PATH)
 
     start = datetime.now()
-    print "started at:", start
+    print("started at:", start)
     lda_model = models.ldamulticore.LdaMulticore(corpus, num_topics=100, workers=3) # num_cores() - 1
-    print "took: ", datetime.now() - start
+    print("took: ", datetime.now() - start)
 
     lda_model.save(LDA_MODEL_PATH)

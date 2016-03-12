@@ -1,0 +1,12 @@
+asgiref==0.9.1
+autobahn==0.12.1
+channels==0.9.5
+daphne==0.9.3
+Django==1.9.4
+djangorestframework==3.3.2
+djangorestframework-jsonapi==2.0.0b2
+inflection==0.3.1
+six==1.10.0
+Twisted==15.5.0
+txaio==2.2.1
+zope.interface==4.1.3
