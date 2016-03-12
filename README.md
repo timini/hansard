@@ -22,3 +22,16 @@ Data analysis is prototyped using ipython notebooks. You can view them using the
 #### Related Projects
 
  - Jun Hao has a [notebook covering topic modelling](http://hojunhao.github.io/sgparliament/LDA.html) of the Singapore Parliamentary Debate Records. 
+
+#### development
+
+this project is using python virtual environments to manage the dependancies locally instead of installing packages globaly on your system. to setup a new virtual environmant use
+
+```
+# initialise your virtual environment
+$ pyvenv venv 
+# activate the virtual environment
+source ./venv/bin/activate
+# install the project dependancies
+pip install -r requirements.txt
+```
