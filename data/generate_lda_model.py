@@ -9,10 +9,7 @@ LDA_MODEL_PATH = './data/large_files/lda.model'
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
-if os.path.exists(LDA_MODEL_PATH):
-    # load dictionary
-    lda_model = models.ldamulticore.LdaMulticore.load(LDA_MODEL_PATH)
-else:
+if not os.path.exists(LDA_MODEL_PATH):
     dictionary = corpora.Dictionary.load(DICT_PATH)
     corpus = corpora.MmCorpus(CORPUS_PATH)
 
