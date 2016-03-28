@@ -4,3 +4,4 @@ data/data/large_files/corpus.mm filter=lfs diff=lfs merge=lfs -crlf
 data/data/large_files/corpus.mm.index filter=lfs diff=lfs merge=lfs -crlf
 data/data/large_files/tfidf_corpus.mm filter=lfs diff=lfs merge=lfs -crlf
 data/data/large_files/tfidf_corpus.mm.index filter=lfs diff=lfs merge=lfs -crlf
+data/data/large_files/lda.model filter=lfs diff=lfs merge=lfs -crlf
