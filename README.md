@@ -21,7 +21,10 @@ Data analysis is prototyped using ipython notebooks. You can view them using the
 
 #### Related Projects
 
- - Jun Hao has a [notebook covering topic modelling](http://hojunhao.github.io/sgparliament/LDA.html) of the Singapore Parliamentary Debate Records. 
+ - Jun Hao has a [notebook covering topic modelling](http://hojunhao.github.io/sgparliament/LDA.html) of the Singapore Parliamentary Debate Records.
+ - http://www.theyworkforyou.com/
+ - https://www.writetothem.com/
+ - https://www.mysociety.org/
 
 #### development
 
