@@ -88,3 +88,16 @@ ENV/
 
 # Spyder project settings
 .spyderproject
+
+
+# Ember / Node 
+
+/node_modules
+npm-debug.log
+/tmp
+/common-tmp
+*.tgz
+/docs/build
+.node_modules-tmp
+.bower_components-tmp
+/coverage
