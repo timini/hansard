@@ -38,3 +38,7 @@ source ./venv/bin/activate
 # install the project dependancies
 pip install -r requirements.txt
 ```
+
+#### Contributers
+
+ - (Jun hao)[https://github.com/hojunhao]
