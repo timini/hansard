@@ -41,4 +41,4 @@ pip install -r requirements.txt
 
 #### Contributers
 
- - (Jun hao)[https://github.com/hojunhao]
+ - [Jun hao](https://github.com/hojunhao)
