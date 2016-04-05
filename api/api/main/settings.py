@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'channels',
 
     'users',
-    'chat',
+    'MPs',
 ]
 
 MIDDLEWARE_CLASSES = [

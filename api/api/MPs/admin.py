@@ -1,3 +1,19 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import MP
+
+
+class MPAdmin(admin.ModelAdmin):
+    list_display = (
+        'additional_name',
+        'home_page',
+        #constituency
+        'family_name',
+        'full_name',
+        'gender',
+        'given_name',
+        'party',
+        'twitter',
+    )
+
+admin.site.register(MP, MPAdmin)
