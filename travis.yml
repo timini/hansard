@@ -1,7 +1,0 @@
-language: python
-python:
-  - "3.4"
-before_install: cd api
-install: pip install -r requirements.txt
-before_script: cd api/api
-script: python manage.py test
