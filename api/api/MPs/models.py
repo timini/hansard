@@ -67,7 +67,15 @@ class Scraper(object):
         str_resp = urlopen(self.MPs_URL.format(page_number)).read().decode('utf-8')
         return json.loads(str_resp)
 
-class MP(models.Model):
+
+class DateMixin(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    class Meta:
+        abstract = True
+
+
+class MP(DateMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     additional_name = models.CharField(max_length=1024, blank=True)
     home_page = models.URLField(blank=True)
