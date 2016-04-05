@@ -1,6 +1,6 @@
 from django.db import models
 
-import json, math, re
+import json, math, re, uuid
 from urllib.request import urlopen
 from pprint import pprint
 
@@ -68,6 +68,7 @@ class Scraper(object):
         return json.loads(str_resp)
 
 class MP(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     additional_name = models.CharField(max_length=1024, blank=True)
     home_page = models.URLField(blank=True)
     #constituency = models.ManyToManyField(Constituency, blank=True)
