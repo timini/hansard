@@ -1,7 +1,9 @@
 language: python
 python:
   - "3.4"
+# cd into the api project
 before_install: cd api
 install: pip install -r requirements.txt
-before_script: cd api/api
+# change from /api to /api/api
+before_script: cd api
 script: python manage.py test
