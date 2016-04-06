@@ -10,4 +10,4 @@ class MPsViewSet(viewsets.ModelViewSet):
     """
     queryset = MP.objects.all()#.order_by('-created_at')
     serializer_class = MPsSerializer
-    resource_name = 'MPs'
+    resource_name = 'member_of_parliment'

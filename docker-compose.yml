@@ -1,0 +1,20 @@
+db:
+  image: postgres
+search:
+  image: elasticsearch
+api:
+  build: ./api
+  command: python api/manage.py runserver 0.0.0.0:8000
+  ports:
+    - "8000:8000"
+  links:
+    - db
+    - search
+#  depends_on:
+#    - db
+#    - search
+client:
+  build: ./client
+  command: ember server
+#  depends_on:
+#    - api
