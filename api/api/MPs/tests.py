@@ -8,6 +8,9 @@ class MPsTest(TestCase):
     def setUp(self):
         self.scraper = Scraper(dataset='members', excluded_keys=['constituency'])
 
+    def test_scraper_without_excluding_related_relationship_key(self):
+        s = Scraper(dataset='members')
+
     def test_gets_all_the_items_from_API(self):
         self.assertIsNotNone(self.scraper.count)
         self.assertIsNotNone(self.scraper.num_pages)

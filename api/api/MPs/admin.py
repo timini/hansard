@@ -5,9 +5,9 @@ from .models import MP
 
 class MPAdmin(admin.ModelAdmin):
     list_display = (
+        'source_id',
         'additional_name',
         'home_page',
-        #constituency
         'family_name',
         'full_name',
         'gender',

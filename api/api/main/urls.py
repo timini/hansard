@@ -4,13 +4,14 @@ from django.contrib import admin
 
 from users import views as users_views
 from MPs import views as MPs_views
-
+from constituencies import views as constituencies_views
 
 admin.autodiscover()
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', users_views.UserViewSet)
 router.register(r'members_of_parliment', MPs_views.MPsViewSet)
+router.register(r'constituencies', constituencies_views.ConstituenciesViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

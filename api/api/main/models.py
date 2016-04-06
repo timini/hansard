@@ -14,10 +14,19 @@ class DateMixin(models.Model):
 class Scraper(object):
     URL = 'http://lda.data.parliament.uk/{dataset}.json?_pageSize=500&_page={page}'
 
-    def __init__(self, dataset=None, excluded_keys=[]):
+    def __init__(
+            self,
+            dataset=None,
+            excluded_keys=[],
+            label_key=None # use this if you want the label for an item to be mapped to an attribute in the cleaned data
+        ):
         assert dataset != None
         self.dataset = dataset
-        self.excluded_keys = excluded_keys + ['_about', 'label']
+        if label_key:
+            self.label_key = label_key
+            self.excluded_keys = excluded_keys
+        else:
+            self.excluded_keys = excluded_keys + ['label']
         self.items = []
         self.cleaned_items = []
         page = self.get_page(0)
@@ -60,8 +69,13 @@ class Scraper(object):
                             clean[self.camel_to_snake(key)] = 'M'
                         else:
                             raise Exception('must have a gender')
+                    elif key == 'label':
+                        clean[self.label_key] = item[key]['_value']
+                    elif key == '_about':
+                        clean['source_id'] = int(item[key].split('/')[-1])
                     elif isinstance(item[key], dict):
-                        clean[self.camel_to_snake(key)] = item[key]['_value']
+                        if '_value' in item[key].keys():
+                            clean[self.camel_to_snake(key)] = item[key]['_value']
                     else:
                         clean[self.camel_to_snake(key)] = item[key]
             self.cleaned_items.append(clean)
