@@ -24,3 +24,6 @@ class MP(DateMixin):
     given_name = models.CharField(max_length=1024, blank=True)
     party = models.CharField(max_length=512, blank=True)
     twitter = models.URLField(blank=True)
+
+    def __str__(self):
+        return self.full_name

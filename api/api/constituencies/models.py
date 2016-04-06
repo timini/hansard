@@ -14,3 +14,10 @@ class Constituency(DateMixin):
     ended_date = models.DateField(blank=True, null=True)
     gss_code = models.CharField(max_length=512)
     os_name = models.CharField(max_length=512)
+
+    def __str__(self):
+        return '{} - {} - {}'.format(
+            self.name,
+            self.started_date,
+            self.ended_date
+        )
