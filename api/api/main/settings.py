@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'oauth2_provider',
     'channels',
 
+    'main',
     'users',
     'MPs',
+    'constituencies'
 ]
 
 MIDDLEWARE_CLASSES = [

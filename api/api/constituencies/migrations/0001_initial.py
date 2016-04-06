@@ -11,26 +11,21 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('constituencies', '__first__'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='MP',
+            name='Constituency',
             fields=[
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
                 ('source_id', models.IntegerField(blank=True, unique=True)),
-                ('additional_name', models.CharField(blank=True, max_length=1024)),
-                ('home_page', models.URLField(blank=True)),
-                ('family_name', models.CharField(max_length=1024)),
-                ('full_name', models.CharField(max_length=1024)),
-                ('gender', models.CharField(choices=[('M', 'Male'), ('F', 'Female')], max_length=2)),
-                ('given_name', models.CharField(blank=True, max_length=1024)),
-                ('party', models.CharField(blank=True, max_length=512)),
-                ('twitter', models.URLField(blank=True)),
-                ('constituency', models.ManyToManyField(blank=True, to='constituencies.Constituency')),
+                ('constituency_type', models.CharField(max_length=1024)),
+                ('started_date', models.DateField()),
+                ('ended_date', models.DateField(blank=True)),
+                ('gss_code', models.CharField(max_length=512)),
+                ('os_name', models.CharField(max_length=512)),
             ],
             options={
                 'abstract': False,
