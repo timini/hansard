@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'users',
     'MPs',
+    'constituencies'
 ]
 
 MIDDLEWARE_CLASSES = [
