@@ -34,11 +34,25 @@ this project is using python virtual environments to manage the dependancies loc
 
 ```
 # initialise your virtual environment
-$ pyvenv venv 
+$ pyvenv venv
 # activate the virtual environment
 source ./venv/bin/activate
+# install openblas
+sudo apt-get install gfortran libopenblas-dev liblapack-dev
 # install the project dependancies
 pip install -r requirements.txt
+```
+
+If scikit-learn install fails there may be trouble running with python 3.
+Follow these instrunctions for Ubuntu:
+
+```
+sudo apt-get install build-essential python3-dev python3-setuptools python3-numpy python3-scipy python3-pip libatlas-dev libatlas3gf-base
+sudo pip3 install scikit-learn
+sudo update-alternatives --set libblas.so.3 \
+    /usr/lib/atlas-base/atlas/libblas.so.3
+sudo update-alternatives --set liblapack.so.3 \
+    /usr/lib/atlas-base/atlas/liblapack.so.3
 ```
 
 #### Contributers
