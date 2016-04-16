@@ -1,23 +1,22 @@
----
+sudo: false
 language: node_js
 node_js:
-  - "0.12"
-
-sudo: false
+  - "5.0"
 
 cache:
   directories:
     - node_modules
 
-before_install:
-  - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
-  - "npm config set spin false"
-  - "npm install -g npm@^2"
-
 install:
-  - npm install -g bower
   - npm install
-  - bower install
 
 script:
-  - npm test
+  - npm run lint
+  - npm run flow:check
+  - npm run test
+  - NODE_ENV=development npm run deploy
+  - NODE_ENV=staging npm run deploy
+  - NODE_ENV=production npm run deploy
+
+after_success:
+  - npm run codecov
