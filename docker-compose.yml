@@ -10,11 +10,8 @@ api:
   links:
     - db
     - search
-#  depends_on:
-#    - db
-#    - search
-client:
-  build: ./client
-  command: ember server
-#  depends_on:
+# client:
+#   build: ./client
+#   command: ember server
+#  links:
 #    - api
