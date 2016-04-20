@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 if os.environ.get('CONTAINERIZED'):
     DATABASES = {
-            'default': {
+        'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'postgres',
             'USER': 'postgres',
