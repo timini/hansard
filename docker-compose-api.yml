@@ -1,5 +1,5 @@
 db:
-  image: postgres
+  image: postgres:9.6
 api:
   build: ./api
   command: python api/manage.py runserver 0.0.0.0:8000

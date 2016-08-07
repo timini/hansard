@@ -7,7 +7,7 @@ stop: docker-stop-api docker-stop-iepy
 docker-build-api:
 	docker-compose -f docker-compose-api.yml build
 
-docker-up-api: docker-stop-api docker-build-api
+docker-up-api: docker-rm-api docker-build-api
 	docker-compose -f docker-compose-api.yml up -d
 
 docker-stop-api:
@@ -16,7 +16,10 @@ docker-stop-api:
 docker-rm-api: docker-stop-api
 	docker-compose -f docker-compose-api.yml rm -f
 
-migrate-api: docker-up-api
+wait-for-postgres: docker-up-api
+	docker exec hansard_db_1 bash -c "while ! pg_isready; do echo \"$(date) - waiting for database to start\"; sleep 3; done"
+
+migrate-api: docker-up-api wait-for-postgres
 	docker exec hansard_api_1 python api/manage.py migrate
 
 createsuperuser-api: migrate-api
@@ -29,7 +32,7 @@ test-api: migrate-api
 	docker exec -ti hansard_api_1 bash -c "cd api && python manage.py test"
 
 api: createsuperuser-api
-	echo "api running on localhost:3000"
+	echo "api running on localhost:8000"
 
 #--------------------
 
