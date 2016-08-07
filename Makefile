@@ -28,7 +28,7 @@ createsuperuser-api: migrate-api
 init-data: migrate-api
 	docker exec -ti hansard_api_1 python api/manage.py init_data
 
-test-api: migrate-api
+test-api:
 	docker exec -ti hansard_api_1 bash -c "cd api && python manage.py test"
 
 api: createsuperuser-api
