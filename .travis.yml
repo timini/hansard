@@ -9,5 +9,4 @@ script:
   - make test-api
 after_success:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" https://gcr.io
-  - echo "$DOCKER_USERNAME-$DOCKER_PASSWORD"
-  - docker tag hansard_api_1 gcr.io/hansard-1012/hansard_api:$(git rev-parse HEAD)
+  - docker tag hansard_api gcr.io/hansard-1012/hansard_api:$(git rev-parse HEAD)
