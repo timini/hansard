@@ -13,11 +13,16 @@ inflection==0.3.1
 ipdb==0.9.0
 ipython==4.1.2
 ipython-genutils==0.1.0
+nltk==3.2
+numpy==1.11.0
 oauthlib==1.0.3
 path.py==8.1.2
 pexpect==4.0.1
 pickleshare==0.6
+psycopg2==2.6.1
 ptyprocess==0.5.1
+requests==2.9.1
+sets==0.2.0
 simplegeneric==0.8.1
 six==1.10.0
 traitlets==4.2.1

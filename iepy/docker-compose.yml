@@ -1,0 +1,10 @@
+db:
+  image: postgres
+iepy:
+  build: .
+  ports:
+    - "8000:8000"
+  volumes:
+    - ./hansard:/hansard
+  links:
+    - db
